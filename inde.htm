@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <!-- <script src="./app.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          plugins: [
+                require('tailwind-scrollbar'),
+            ],
+        }
+      </script>
+    <script src="https://kit.fontawesome.com/00c56b31c2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<!-- not responsive page. size page for best view 1920*1080 -->
+
+<body class="w-screen h-screen bg-gray-50">
+    <header id="header" class="w-full h-[10vh] shadow-lg bg-white">
+        <nav id="header__nav" class="mx-auto w-[1440px] h-full grid grid-cols-7">
+            <nav id="header__nav__nav" class="col-span-2 flex justify-start items-center">
+                <div id="box_search" class="w-11/12 h-3/5 bg-gray-100 rounded-xl flex justify-center items-center">
+                    <button type="button" class="px-2  mr-2 h-3/5 text-xl transition group">
+                        <i class="fa-solid fa-magnifying-glass text-gray-700 group-hover:text-gray-500 group-active:text-gray-700"></i>
+                    </button>
+                    <input type="text" name="searchBox" id="input_search" class="mr-2 w-4/5 h-3/5 bg-inherit border-b-2 border-gray-300">
+                </div>
+            </nav>
+            <nav id="header__nav__nav" class="col-span-3 flex justify-center items-center">
+                <h1 class="text-purple-500 text-3xl font-bold">Shopping Cart <sub class="text-sm">codawin</sub></h1>
+            </nav>
+            <nav id="header__nav__nav" class="col-span-2 flex justify-end items-center">
+                <button id="cart_btn" class="w-12 h-12 rounded-lg">
+                    <i class="fa-solid fa-cart-shopping text-2xl text-gray-700"></i>
+                </button>
+                <span id="total" class="w-6 h-6 bg-gray-200 rounded-full text-gray-800 flex justify-center items-center text-md">0</span>
+            </nav>
+        </nav>
+    </header>
+    <!-- <section id="body_cart" class="w-full h-auto">
+        <main id="shop" class="mx-auto mt-10 w-[1440px] h-auto grid grid-cols-4 gap-4">
+            <div id="box_product" class="p-2 w-full h-96 border-2 rounded-2xl bg-white">
+                <div id="box_img_product" class="w-full h-3/4 flex justify-center items-center">
+                    <img src="./image/1.png" alt="img product" class="w-3/4">
+                </div>
+                <div id="box_inf_product" class="w-full h-1/4 flex flex-col justify-between items-center font-bold text-gray-800">
+                    <p id="name_product">Name Product</p>
+                    <p id="price_product" class="text-sm text-gray-700">$ 300.77</p>
+                    <button id="add_cart" class="rounded-lg bg-purple-500 py-1 w-1/2 text-white font-bold transition hover:shadow-lg hover:shadow-purple-300 active:bg-purple-400">add cart</button>
+                </div>
+            </div>
+        </main>
+    </section> -->
+    <section id="cart" class="p-4 w-full h-[90vh] bg-white flex gap-x-4">
+        <article id="total_shop" class="w-[70%] h-full ">
+            <div id="total_shop__texts" class="border-b-2 px-2 mx-auto w-full h-16 grid grid-cols-5 justify-items-center items-center text-gray-600 font-bold">
+                <h2>Image</h2>
+                <h2>Name Product</h2>
+                <h2>Count</h2>
+                <h2>Price</h2>
+                <h2>Condition</h2>
+            </div>
+            <div id="products_shop" class="px-2 mt-2 w-full h-[80vh] overflow-y-auto">
+                <div class="mb-4 w-full h-36 grid grid-cols-5 justify-items-center items-center text-gray-600 font-bold">
+                    <div class="">
+                        <img src="./image/1.png" alt="img product" class="mx-auto w-[45%]">
+                    </div>
+                    <div class="text-gray-700">
+                        <h1>Name Product</h1>
+                        <p class="text-sm text-gray-400">color : Black</p>
+                    </div>
+                    <div class="w-3/5 h-auto flex justify-around items-center">
+                        <button class="rounded-lg w-8 h-8 bg-purple-200 text-white">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <p>1</p>
+                        <button class="rounded-lg w-8 h-8 bg-purple-500 text-white">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                    <div class=" ">
+                        <h2>$ 30.99</h2>
+                    </div>
+                    <div class=" ">
+                        <button>
+                            <i class="fa-solid fa-plus rotate-45 text-3xl text-gray-300"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="pay" class="rounded-2xl p-6 w-[30%] h-full bg-gradient-to-br from-indigo-950 to-purple-500 grid grid-rows-6">
+            <h1 class="row-span-1 m-0 text-6xl text-white flex justify-start items-center">Payment Info</h1>
+            <div class="row-span-1 border-t-2 border-b-2 border-indigo-500 w-full h-auto flex flex-col">
+                <p class="my-4 text-indigo-300 font-bold">Payment Carts</p>
+                <div class="w-full h-auto flex">
+                    <button class="rounded-full border-2 border-indigo-400 mr-4 w-36 h-12 flex justify-around items-center text-indigo-400 transition group hover:border-white">
+                        <i class="fa-brands fa-cc-visa group-hover:text-white text-2xl"></i>
+                        <p class="group-hover:text-white font-bold">Visa Cart</p>
+                    </button>
+                    <button class="rounded-full border-2 border-indigo-400 w-36 h-12 flex justify-around items-center text-indigo-400 transition group hover:border-white">
+                        <i class="fa-brands fa-paypal group-hover:text-white text-2xl"></i>
+                        <p class="group-hover:text-white font-bold">Paypal Cart</p>
+                    </button>
+                </div>
+            </div>
+            <div class="row-span-1 w-full h-auto flex flex-col justify-around items-start">
+                <p class="text-indigo-300 font-bold">Name Co Cart</p>
+                <input type="text" name="" id="" class="w-full h-12 text-xl bg-inherit border-b-2">
+            </div>
+            <div class="row-span-1 w-full h-auto bg-green-500">
+                <label for=""></label>
+                <input type="text" name="" id="">
+            </div>
+            <div class="row-span-1 w-full h-auto bg-gray-500">
+                <label for=""></label>
+                <label for=""></label>
+                <input type="text" name="" id="">
+                <input type="text" name="" id="">
+                <input type="text" name="" id="">
+            </div>
+            <div class="row-span-1 w-full h-auto bg-yellow-500">
+                <button>Check Out</button>
+            </div>
+        </article>
+    </section>
+</body>
+</html>
