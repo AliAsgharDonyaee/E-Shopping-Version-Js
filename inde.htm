@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    <script src="./app.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/00c56b31c2.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -21,7 +20,7 @@
         <nav id="header__nav" class="mx-auto w-[1440px] h-full grid grid-cols-7">
             <nav id="header__nav__nav" class="col-span-2 flex justify-start items-center">
                 <div id="box_search" class="w-11/12 h-3/5 bg-gray-100 rounded-xl flex justify-center items-center">
-                    <button type="button" class="px-2  mr-2 h-3/5 text-xl transition group">
+                    <button type="button" id="searchBtn" class="px-2  mr-2 h-3/5 text-xl transition group">
                         <i class="fa-solid fa-magnifying-glass text-gray-700 group-hover:text-gray-500 group-active:text-gray-700"></i>
                     </button>
                     <input type="text" name="searchBox" id="input_search" class="mr-2 w-4/5 h-3/5 bg-inherit border-b-2 border-gray-300">
@@ -38,9 +37,12 @@
             </nav>
         </nav>
     </header>
+
+    <!-- shop page -->
+
     <section id="body_cart" class="w-full h-auto z-0">
         <main id="shop" class="mx-auto mt-10 w-[1440px] h-auto grid grid-cols-4 gap-4">
-            <div id="box_product" class="p-2 w-full h-96 border-2 rounded-2xl bg-white">
+            <!-- <div id="box_product" class="p-2 w-full h-96 border-2 rounded-2xl bg-white">
                 <div id="box_img_product" class="w-full h-3/4 flex justify-center items-center">
                     <img src="./image/1.png" alt="img product" class="w-3/4">
                 </div>
@@ -50,13 +52,13 @@
                     <button id="add_cart" 
                     class="rounded-lg bg-purple-500 py-1 w-1/2 text-white font-bold transition hover:shadow-lg hover:shadow-purple-300 active:bg-purple-400">add cart</button>
                 </div>
-            </div>
+            </div> -->
         </main>
     </section>
 
     <!-- cart ui -->
 
-    <section id="cart" class="p-4 w-full h-[90vh] bg-white flex gap-x-4 fixed top-20 left-full z-10">
+    <section id="cart" class="p-4 w-full h-[90vh] bg-white flex gap-x-4 transition ease fixed top-20 translate-x-full z-10">
         <article id="total_shop" class="w-[70%] h-full ">
             <div id="total_shop__texts" class="border-b-2 px-2 mx-auto w-full h-16 grid grid-cols-5 justify-items-center items-center text-gray-600 font-bold">
                 <h2>Image</h2>
@@ -157,5 +159,7 @@
             </div>
         </article>
     </section>
+    
+    <script src="./app.js"></script>
 </body>
 </html>
