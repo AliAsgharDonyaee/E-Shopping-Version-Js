@@ -1,89 +1,114 @@
 {
-    "products":[
-        {
-            "id": 1,
-            "name_products": "Minimaul Wooden Base",
-            "color": "Black Gray",
-            "price": "50.59",
-            "img": "./image/1.png"
-        },
-        {
-            "id": 2,
-            "name_products": "Minimaul Metal Base",
-            "color": "Wormy",
-            "price": "55.99",
-            "img": "./image/2.png"
-        },
-        {
-            "id": 3,
-            "name_products": "Minimaul Mini Wooden Base",
-            "color": "Wormy",
-            "price": "45.59",
-            "img": "./image/3.png"
-        },
-        {
-            "id": 4,
-            "name_products": "Minimaul Long Wooden Base",
-            "color": "Wormy",
-            "price": "65.59",
-            "img": "./image/4.png"
-        },
-        {
-            "id": 5,
-            "name_products": "Convenience Mini Wooden Base",
-            "color": "Brown",
-            "price": "45.69",
-            "img": "./image/5.png"
-        },
-        {
-            "id": 6,
-            "name_products": "Official Convenience wooden base",
-            "color": "Black",
-            "price": "70.59",
-            "img": "./image/6.png"
-        },
-        {
-            "id": 7,
-            "name_products": "Convenience Mini Metal Base",
-            "color": "Black Gray",
-            "price": "80.99",
-            "img": "./image/7.png"
-        },
-        {
-            "id": 8,
-            "name_products": "Minimaul thin Base",
-            "color": "Wormy",
-            "price": "40.39",
-            "img": "./image/8.png"
-        },
-        {
-            "id": 9,
-            "name_products": "Convenience Long Base",
-            "color": "Red",
-            "price": "79.59",
-            "img": "./image/9.png"
-        },
-        {
-            "id": 10,
-            "name_products": "Convenience Yellow",
-            "color": "Armpit",
-            "price": "79.59",
-            "img": "./image/10.png"
-        },
-        {
-            "id": 11,
-            "name_products": "Royal Convenience",
-            "color": "Brown",
-            "price": "150.99",
-            "img": "./image/11.png"
-        },
-        {
-            "id": 12,
-            "name_products": "Wooden Long Base",
-            "color": "white wooden",
-            "price": "29.59",
-            "img": "./image/12.png"
-        }
-    ],
-    "buy_product":[]
+  "products": [
+    {
+      "id": 1,
+      "name_products": "Minimaul Wooden Base",
+      "color": "Black Gray",
+      "price": "50.59",
+      "img": "./image/1.png"
+    },
+    {
+      "id": 2,
+      "name_products": "Minimaul Metal Base",
+      "color": "Wormy",
+      "price": "55.99",
+      "img": "./image/2.png"
+    },
+    {
+      "id": 3,
+      "name_products": "Minimaul Mini Wooden Base",
+      "color": "Wormy",
+      "price": "45.59",
+      "img": "./image/3.png"
+    },
+    {
+      "id": 4,
+      "name_products": "Minimaul Long Wooden Base",
+      "color": "Wormy",
+      "price": "65.59",
+      "img": "./image/4.png"
+    },
+    {
+      "id": 5,
+      "name_products": "Convenience Mini Wooden Base",
+      "color": "Brown",
+      "price": "45.69",
+      "img": "./image/5.png"
+    },
+    {
+      "id": 6,
+      "name_products": "Official Convenience wooden base",
+      "color": "Black",
+      "price": "70.59",
+      "img": "./image/6.png"
+    },
+    {
+      "id": 7,
+      "name_products": "Convenience Mini Metal Base",
+      "color": "Black Gray",
+      "price": "80.99",
+      "img": "./image/7.png"
+    },
+    {
+      "id": 8,
+      "name_products": "Minimaul thin Base",
+      "color": "Wormy",
+      "price": "40.39",
+      "img": "./image/8.png"
+    },
+    {
+      "id": 9,
+      "name_products": "Convenience Long Base",
+      "color": "Red",
+      "price": "79.59",
+      "img": "./image/9.png"
+    },
+    {
+      "id": 10,
+      "name_products": "Convenience Yellow",
+      "color": "Armpit",
+      "price": "79.59",
+      "img": "./image/10.png"
+    },
+    {
+      "id": 11,
+      "name_products": "Royal Convenience",
+      "color": "Brown",
+      "price": "150.99",
+      "img": "./image/11.png"
+    },
+    {
+      "id": 12,
+      "name_products": "Wooden Long Base",
+      "color": "white wooden",
+      "price": "29.59",
+      "img": "./image/12.png"
+    }
+  ],
+  "buy_product": [
+    {
+      "id": 4,
+      "name": "Minimaul Long Wooden Base",
+      "price": "65.59",
+      "image": "./image/4.png",
+      "color": "Wormy",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "Minimaul Metal Base",
+      "price": "55.99",
+      "image": "./image/2.png",
+      "color": "Wormy",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "name": "Official Convenience wooden base",
+      "price": "70.59",
+      "image": "./image/6.png",
+      "color": "Black",
+      "quantity": 1
+    }
+  ]
 }
