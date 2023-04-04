@@ -3,11 +3,6 @@ const cartBtn = document.getElementById("cart_btn");
 const cart = document.getElementById("cart");
 const searchBtn = document.getElementById("searchBtn");
 const input_search = document.getElementById("input_search");
-// carts datas
-const ImageProductBuy = document.getElementById("image_product_buy");
-const NameProductBuy = document.getElementById("name_product_buy");
-const colorProductBuy = document.getElementById("color_product_buy");
-const priceProductBuy = document.getElementById("price_product_buy");
 
 let allProducts = [];
 let allProductsBuy = [];
@@ -23,9 +18,12 @@ addEventListener("DOMContentLoaded", () => {
 		.then(() => {
 			fetch("http://localhost:3000/buy_product")
 				.then((response) => response.json())
-				.then((data) => getDatasCart(data));
+				.then((data) => {
+					getDatasCart(data);
+					allProductsBuy = data;
+				});
 		})
-		.catch((err) => alert(err));
+	.catch((err) => alert(err));
 });
 
 cartBtn.addEventListener("click", (e) => {
@@ -89,7 +87,7 @@ const getData = (_data) => {
                 </div>
             `;
 		const createDiv = document.createElement("div");
-		createDiv.setAttribute("id", "box_product");
+		createDiv.setAttribute("id", `box_product-${e.id}`);
 		createDiv.className = `${e.id} p-2 w-full h-96 border-2 rounded-2xl bg-white`;
 		shop.appendChild(createDiv);
 		createDiv.innerHTML = product;
@@ -97,15 +95,14 @@ const getData = (_data) => {
 };
 
 const addCartsBtns = (_addCart) => {
-	[..._addCart].forEach((btn) => {
+	const aa = [..._addCart];
+	aa.forEach((btn) => {
 		btn.addEventListener("click", (e) => {
-			window.location.reload();
+			// window.location.reload();
 			const getID = e.target.parentNode.parentNode.classList[0];
-
 			const c = allProducts.filter((e) => {
 				return e.id == getID;
 			});
-
 			fetch("http://localhost:3000/buy_product", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -118,6 +115,8 @@ const addCartsBtns = (_addCart) => {
 					quantity: 1,
 				}),
 			});
+			e.target.style.backgroundColor = "#d8b4fe";
+			e.target.disabled = true;
 		});
 	});
 };
@@ -154,23 +153,10 @@ const getDatasCart = (_data) => {
 		</div>
 		    `;
 		const createDiv = document.createElement("div");
-		createDiv.setAttribute(`id-${e.id}`, "box_product_buy");
+		createDiv.setAttribute(`id`, `box_product_buy-${e.id}`);
 		createDiv.className = `mb-4 w-full h-36 grid grid-cols-5 justify-items-center items-center text-gray-600 font-bold`;
 		const productsShopBuy = document.getElementById("products_shop");
 		productsShopBuy.appendChild(createDiv);
 		createDiv.innerHTML = product;
-
-		const plus = document.getElementById("plus");
-		const minus = document.getElementById("minus");
-		const delet = document.getElementById("delete");
-
-		// ??????
-		// plus.addEventListener("click", (e) => {
-		// 	const getProduct = e.target.parentNode.parentNode.parentNode;
-		// 	console.log(getProduct);
-		// 	const c = allProducts.filter((e) => {
-		// 		return e.id == getID;
-		// 	});
-		// });
 	});
 };

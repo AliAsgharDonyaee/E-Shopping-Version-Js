@@ -93,22 +93,6 @@
       "image": "./image/4.png",
       "color": "Wormy",
       "quantity": 1
-    },
-    {
-      "id": 2,
-      "name": "Minimaul Metal Base",
-      "price": "55.99",
-      "image": "./image/2.png",
-      "color": "Wormy",
-      "quantity": 1
-    },
-    {
-      "id": 6,
-      "name": "Official Convenience wooden base",
-      "price": "70.59",
-      "image": "./image/6.png",
-      "color": "Black",
-      "quantity": 1
     }
   ]
 }
